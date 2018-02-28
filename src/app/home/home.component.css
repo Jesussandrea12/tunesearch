@@ -2,6 +2,11 @@
   padding: 1em;
 }
 
+.img-border {
+  margin: 1em;
+  background-color: #e4e4e4;
+}
+
 .card {
   text-align: center;
   align-items: center;

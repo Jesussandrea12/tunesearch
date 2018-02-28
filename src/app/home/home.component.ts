@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
       // .debounceTime(500)
       .switchMap(query => this.http.get(`${URL}?q=${query}`))
       .map(response => response.json())
-      .map(response => response.results);
+      .map(response => response.data);
   }
 
   ngOnInit() {
