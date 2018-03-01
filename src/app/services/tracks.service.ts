@@ -9,12 +9,13 @@ export class TracksService {
 
   // Get all tracks from the API
   getAllTracks() {
-    return this.http.get('http://localhost:3000/api/tracks')
+  // const headers = new Headers({"Access-Control-Allow-Headers":"*"});
+  // return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers:headers});
+    return this.http.get('/api/tracks')
       .map(res => res.json());
   }
-
  //  public obtenerResultados(busqueda){
- //   // https://api.deezer.com/search?q=eminem
- //   return this.http.get('https://api.deezer.com/search?q='+busqueda);
+ //  https://api.deezer.com/search?q=eminem
+ //  return this.http.get('https://api.deezer.com/search?q='+busqueda);
  // }
 }
