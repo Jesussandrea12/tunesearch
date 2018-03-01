@@ -2,22 +2,32 @@
   padding: 1em;
 }
 
-.img-border {
+.border {
   margin: 1em;
-  background-color: #e4e4e4;
 }
 
 .card {
   text-align: center;
   align-items: center;
   display: flex;
-  width: 20rem;
-  padding: 1em;
-  margin: 1em;
+  margin: 8px;
+  border-radius: 10px !important;
+  /* width: 20rem; */
+  /* padding: 1em; */
 }
 
 @media screen and (max-width: 768px) {
   .card {
-      width: auto;
+    width: auto;
+  }
+  .margin {
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card {
+    width: auto;
+    margin: 0 !important;
   }
 }

@@ -4,12 +4,12 @@
   <small><em>Search for artist, album or music.</em></small>
   <div class="card-group" *ngFor="let result of results$ | async">
     <div class="card">
-      <img class="card-img-top img-border rounded" src="{{ result.album.cover_medium }}" alt="Card image cap">
+      <img class="card-img-top border rounded" src="{{ result.album.cover_medium }}" alt="Card image cap">
       <h4 class="card-title">{{result.title}}</h4>
       <h6 class="card-subtitle mb-2 text-muted">{{ result.duration | minutes }}</h6>
       <audio controls src="{{ result.preview }}"></audio>
       <p class="card-text">{{ result.album.title }}</p>
-      <a href="{{ result.link }}" target="_blank" class="btn btn-outline-primary">Complete 🎵</a>
+      <a href="{{ result.link }}" target="_blank" class="btn btn-outline-primary border">Complete 🎵</a>
     </div>
   </div>
 </div>
@@ -22,7 +22,7 @@
     <div class="card-group">
       <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let track of tracks">
         <div class="card align-center">
-          <img class="card-img-top" src="{{ track.album.cover_medium }}" alt="Card image cap">
+          <img class="card-img-top border rounded" src="{{ track.album.cover_medium }}" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">{{ track.title }}</h4>
             <p class="card-text">{{ track.artist.name }}</p>
@@ -43,7 +43,7 @@
 </div>
 
 <div class="margin" style="margin: 2em;">
-  <div class="container bg-faded" style="padding: 3em;">
+  <div class="container bg-faded padding" style="padding: 3em;">
     <div class="row justify-content-center">
       <div class="col-sm-12 col-md-8 col-lg-6" style="padding: 2em;">
         <h3 class="text-center">Listen music for free!</h3>

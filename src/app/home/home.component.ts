@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     const URL = 'https://api.deezer.com/search';
     this.searchField = new FormControl();
     this.results$ = this.searchField.valueChanges
-      // .debounceTime(500)
+      .debounceTime(100)
       .switchMap(query => this.http.get(`${URL}?q=${query}`))
       .map(response => response.json())
       .map(response => response.data);
