@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private tss: TracksService, private http: Http) {
     // const headers = new Headers({"Access-Control-Allow-Headers":"*"});
 
-    const URL = 'https://api.deezer.com/search';
+    const URL = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search';
     this.searchField = new FormControl();
     this.results$ = this.searchField.valueChanges
       .debounceTime(100)
