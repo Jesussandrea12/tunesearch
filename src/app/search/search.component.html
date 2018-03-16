@@ -1,0 +1,31 @@
+<!-- seacrh form -->
+<div class="container">
+  <div class="form">
+    <input type="text" class="form-control buscador" placeholder="Search for artist, album or music." [formControl]="searchField">
+
+    <div *ngIf="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <ul class="list-group" *ngFor="let result of results$ | async">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <img class="border rounded" src="{{ result.album.cover_small }}" alt="cover">
+        {{result.title}} | {{ result.duration | minutes }}
+        <a href="{{ result.link }}" target="_blank" class="btn btn-outline-primary">Complete 🎵</a>
+      </li>
+    </ul>
+
+    <!-- <div class="card-group" *ngFor="let result of results$ | async">
+      <div class="card">
+        <img class="card-img-top border rounded" src="{{ result.album.cover_medium }}" alt="Card image cap">
+        <h4 class="card-title">{{result.title}}</h4>
+        <p class="card-text">{{ result.album.title }}</p>
+        <a href="{{ result.link }}" target="_blank" class="btn btn-outline-primary border">Complete 🎵</a>
+      </div>
+    </div> -->
+  </div>
+</div>
+
+<div class="footer">
+  <p class="text-center">Made with ❤️ by @jesussandrea12.<br>🌎 Enjoyed everywhere</p>
+</div>

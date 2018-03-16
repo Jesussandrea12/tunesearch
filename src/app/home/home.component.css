@@ -1,9 +1,42 @@
-.form {
-  padding: 1em;
+.hero {
+  height: calc(100vh - 65.59px);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: url('../../assets/pineapple.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-.border {
-  margin: 1em;
+.hero-h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.4em;
+}
+
+.container {
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.botoncito {
+  border-radius: 5000px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+.mt-1 {
+  margin-top: 1em !important;
+}
+
+.mb-1 {
+  margin-bottom: 1em !important;
+}
+
+.margin {
+  margin: 1em !important
 }
 
 .card {

@@ -1,5 +1,59 @@
-footer {
-  padding: 5em 0;
-  background-color: #333;
-  color: #eee;
+/*  paleta de colores:
+    negro = #000
+    gris = #373B3A
+    Azul oscuro = #08316A
+    Azul = #0C3982
+    blanco = #D6D6D6 */
+
+/* ================================== nav =================================== */
+.navigation {
+  background-color: rgba(0,0,0,.8);
+  padding: .8em 1.5em;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item {
+  font-family: 'Raleway', sans-serif;
+}
+
+.auto {
+  justify-content: center;
+  align-items: center;
+  /* display: grid !important;
+  text-align: center;
+  justify-content: center !important;
+  justify-items: center !important;
+  justify-self: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  align-self: center !important; */
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 5000px;
+  display: grid !important;
+  text-align: center;
+  justify-content: center !important;
+  justify-items: center !important;
+  justify-self: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  align-self: center !important;
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    display: grid !important;
+    text-align: center;
+    justify-content: center !important;
+    justify-items: center !important;
+    justify-self: center !important;
+    align-content: center !important;
+    align-items: center !important;
+    align-self: center !important;
+  }
 }

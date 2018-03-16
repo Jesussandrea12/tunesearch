@@ -6,9 +6,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
 
 import { TracksService } from './services/tracks.service';
 import { MinutesPipe } from './pipes/minutes.pipe';
+import { PlaylistsComponent } from './playlists/playlists.component';
 
 // Define the routes
 const ROUTES = [
@@ -20,6 +22,14 @@ const ROUTES = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
+  },
+  {
+    path: 'playlists',
+    component: PlaylistsComponent
   }
 ];
 
@@ -27,7 +37,9 @@ const ROUTES = [
   declarations: [
     AppComponent,
     HomeComponent,
-    MinutesPipe
+    MinutesPipe,
+    SearchComponent,
+    PlaylistsComponent
   ],
   imports: [
     BrowserModule,

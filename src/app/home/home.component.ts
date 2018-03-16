@@ -11,28 +11,20 @@ import 'rxjs/Rx';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  results$: Observable<any[]>;
-  private searchField: FormControl;
   // instantiate tracks to an empty array
   tracks = [];
   busqueda = [];
+  loading = true;
 
   constructor(private tss: TracksService, private http: Http) {
     // const headers = new Headers({"Access-Control-Allow-Headers":"*"});
-
-    const URL = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search';
-    this.searchField = new FormControl();
-    this.results$ = this.searchField.valueChanges
-      .debounceTime(100)
-      .switchMap(query => this.http.get(`${URL}?q=${query}`))
-      .map(response => response.json())
-      .map(response => response.data);
   }
 
   ngOnInit() {
     // Retrieve posts from the API
     this.tss.getAllTracks().subscribe(response => {
       this.tracks = response.data;
+      this.loading = false;
     });
   }
 }

@@ -1,40 +1,35 @@
-
-<div class="form">
-  <input type="text" class="form-control" placeholder="Search for..." [formControl]="searchField">
-  <small><em>Search for artist, album or music.</em></small>
-  <div class="card-group" *ngFor="let result of results$ | async">
-    <div class="card">
-      <img class="card-img-top border rounded" src="{{ result.album.cover_medium }}" alt="Card image cap">
-      <h4 class="card-title">{{result.title}}</h4>
-      <h6 class="card-subtitle mb-2 text-muted">{{ result.duration | minutes }}</h6>
-      <audio controls src="{{ result.preview }}"></audio>
-      <p class="card-text">{{ result.album.title }}</p>
-      <a href="{{ result.link }}" target="_blank" class="btn btn-outline-primary border">Complete 🎵</a>
-    </div>
+<!-- home -->
+<div class="hero">
+  <div class="container align-center">
+    <h1 class="hero-h1">Music for everyone.</h1>
+    <button type="button" class="botoncito btn btn-primary btn-lg">learn more</button>
   </div>
 </div>
 
-<hr>
-<h1 class="display-4 text-center">Top Hits</h1>
-
+<h1 class="display-4 text-center mt-1 mb-1">Top Hits</h1>
 <div class="container">
   <div class="row justify-content-center">
-    <div class="card-group">
-      <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let track of tracks">
+
+    <div *ngIf="loading">
+      <div class="spinner"></div>
+    </div>
+
+
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let track of tracks">
+      <div class="card-group">
         <div class="card align-center">
-          <img class="card-img-top border rounded" src="{{ track.album.cover_medium }}" alt="Card image cap">
+          <img class="card-img-top rounded-top" src="{{ track.album.cover_medium }}" alt="Card image cap">
           <div class="card-block">
-            <h4 class="card-title">{{ track.title }}</h4>
+            <h4 class="card-title mt-1">{{ track.title }}</h4>
             <p class="card-text">{{ track.artist.name }}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <audio controls src="{{ track.preview }}"></audio>
+            <audio controls=""  src="{{ track.preview }}" id="audio"></audio>
             <li class="list-group-item">{{ track.duration | minutes }}</li>
             <li class="list-group-item">{{ track.album.title }}</li>
           </ul>
           <div class="card-block">
-            <a href="{{ track.link }}" target="_blank" class="btn btn-primary">Complete 🎵</a>
-            <a href="{{ track.album.tracklist }}" target="_blank" class="btn btn-outline-danger">Tracklist</a>
+            <a href="{{ track.link }}" target="_blank" class="btn btn-primary margin">Complete 🎵</a>
           </div>
         </div>
       </div>
@@ -42,17 +37,6 @@
   </div>
 </div>
 
-<div class="margin" style="margin: 2em;">
-  <div class="container bg-faded padding" style="padding: 3em;">
-    <div class="row justify-content-center">
-      <div class="col-sm-12 col-md-8 col-lg-6" style="padding: 2em;">
-        <h3 class="text-center">Listen music for free!</h3>
-        <p class="text-center">This is not a trial, Thanks to the API of Deezer.</p>
-        <!-- 4:3 aspect ratio -->
-        <div class="embed-responsive embed-responsive-1by1">
-          <iframe class="embed-responsive-item" scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=true&width=500&height=500&color=007feb&layout=&size=big&type=playlist&id=1131655591&app_id=1"></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<footer>
+  <p class="text-center">Made with ❤️ by @jesussandrea12.<br>🌎 Enjoyed everywhere</p>
+</footer>
