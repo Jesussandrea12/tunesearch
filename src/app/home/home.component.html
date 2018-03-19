@@ -6,6 +6,7 @@
   </div>
 </div>
 
+<!-- Api -->
 <h1 class="display-4 text-center mt-1 mb-1">Top Hits</h1>
 <div class="container">
   <div class="row justify-content-center">
@@ -14,17 +15,16 @@
       <div class="spinner"></div>
     </div>
 
-
     <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let track of tracks">
       <div class="card-group">
         <div class="card align-center">
-          <img class="card-img-top rounded-top" src="{{ track.album.cover_medium }}" alt="Card image cap">
+          <img class="card-img-top rounded-top" src="{{ track.album.cover_medium }}" alt="cover_medium">
           <div class="card-block">
             <h4 class="card-title mt-1">{{ track.title }}</h4>
             <p class="card-text">{{ track.artist.name }}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <audio controls=""  src="{{ track.preview }}" id="audio"></audio>
+            <audio controls src="{{ track.preview }}"></audio>
             <li class="list-group-item">{{ track.duration | minutes }}</li>
             <li class="list-group-item">{{ track.album.title }}</li>
           </ul>
@@ -34,6 +34,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </div>
 

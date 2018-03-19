@@ -16,7 +16,7 @@ export class SearchComponent {
   // instantiate tracks to an empty array
   tracks = [];
   busqueda = [];
-  loading: Boolean;
+  // loading: Boolean;
 
   constructor(private tss: TracksService, private http: Http) {
     // const headers = new Headers({"Access-Control-Allow-Headers":"*"});
@@ -29,6 +29,6 @@ export class SearchComponent {
       .switchMap(query => this.http.get(`${URL}?q=${query}`))
       .map(response => response.json())
       .map(response => response.data);
-    this.loading = false;
+    // this.loading = false;
   }
 }

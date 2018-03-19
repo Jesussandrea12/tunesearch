@@ -11,7 +11,7 @@ export class TracksService {
   getAllTracks() {
   // const headers = new Headers({"Access-Control-Allow-Headers":"*"});
   // return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers:headers});
-    return this.http.get('http://localhost:3000/api/tracks')
+    return this.http.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/radio/42042/tracks')
       .map(res => res.json());
   }
 }
